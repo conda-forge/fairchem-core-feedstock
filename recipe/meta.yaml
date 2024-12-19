@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: 9bc57735c3f69304620d80f728e328a6ad460ba3e28483a7a0c6bfb17fa849ee
+  sha256: 14d5a3a27156803058e44baa42074a9c15a608ac69859245b8136c534a01fcea
 
 build:
   entry_points:
@@ -27,7 +27,7 @@ requirements:
     - hydra-core
     - lmdb
     - python >=3.9,<3.13
-    - pytorch >=2.4
+    - pytorch ==2.4
     - numpy >=1.26.0,<2.0.0
     - python-lmdb
     - ase
