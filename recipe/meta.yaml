@@ -14,11 +14,11 @@ build:
     - fairchem = fairchem.core._cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.9,<3.13
+    - python {{ python_min }}
     - hatchling
     - hatch-vcs
     - hatch-fancy-pypi-readme >=24
@@ -26,7 +26,7 @@ requirements:
   run:
     - hydra-core
     - lmdb
-    - python >=3.9,<3.13
+    - python >={{ python_min }},<3.13
     - pytorch ==2.4
     - numpy >=1.26.0,<2.0.0
     - python-lmdb
@@ -45,6 +45,8 @@ requirements:
     - submitit
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - fairchem.core
   commands:
