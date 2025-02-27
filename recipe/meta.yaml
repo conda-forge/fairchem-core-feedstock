@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "1.4.0" %}
+{% set version = "1.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: 14d5a3a27156803058e44baa42074a9c15a608ac69859245b8136c534a01fcea
+  sha256: e33972935d6248f3d463157cb6fdd16f4b96f1dd113eb606bcf3d1cf3f99ecb1
 
 build:
   entry_points:
     - fairchem = fairchem.core._cli:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
@@ -24,10 +24,11 @@ requirements:
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
+    - torchtnt
     - hydra-core
     - lmdb
     - python >={{ python_min }},<3.13
-    - pytorch ==2.4
+    - pytorch >=2.4.0,<2.5.dev0
     - numpy >=1.26.0,<2.0.0
     - python-lmdb
     - ase
