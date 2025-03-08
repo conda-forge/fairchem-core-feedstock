@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: 80c4a2b82dd840bd02b2c9231572ff5df64c118a1c011dd4463b2a981b9e5e5e
+  sha256: 5e969766cb1988f1c6c5a307c4fa5d1c1375556bb9f00a9edb75cc2ef1f5ddee
 
 build:
   entry_points:
@@ -24,7 +24,7 @@ requirements:
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
-    - huggingface_hub >=0.29.2
+    - huggingface_hub >=0.27.1
     - pydantic >=2.10.0
     - torchtnt
     - hydra-core
