@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "1.8.0" %}
+{% set version = "1.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: 6a9ccc4aa0b14b5cf03a0de6da6512b131c7facd3544f56248b96226f9d57ab2
+  sha256: baa15782a45708b00d2622d58970473c35107f0bdb34fac059792450c7f07649
 
 build:
   entry_points:
