@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "1.8.1" %}
+{% set version = "1.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: baa15782a45708b00d2622d58970473c35107f0bdb34fac059792450c7f07649
+  sha256: 6a72554f1f14c044df97752c6a01e092ddfdb32cb0edad97e113c4c51c6d71a3
 
 build:
   entry_points:
@@ -24,6 +24,7 @@ requirements:
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
+    - torch-geometric
     - huggingface_hub >=0.27.1
     - pydantic >=2.10.0
     - torchtnt
