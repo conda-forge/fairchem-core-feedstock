@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "1.10.0" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: ec088258065aa6c6cb6a00c3b6edcf95ce023e7d12d0bd09a280329b8cf4fa7a
+  sha256: 1303ab8b6fea265060788f55e80fa5f22118c5e6826b2a45122c0b7dc8197506
 
 build:
   entry_points:
@@ -24,6 +24,7 @@ requirements:
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
+    - ase-db-backends >=0.10.0
     - torch-geometric
     - huggingface_hub >=0.27.1
     - pydantic >=2.10.0
@@ -31,17 +32,17 @@ requirements:
     - hydra-core
     - lmdb
     - python >={{ python_min }},<3.13
-    - pytorch >=2.4.0,<2.5.dev0
-    - numpy >=1.26.0,<2.0.0
+    - pytorch >=2.6.0,<2.7.dev0
+    - numpy >=2.0,<2.3
     - python-lmdb
-    - ase
+    - ase >=3.25.0
     - pymatgen >=2023.10.3
     - pytorch_geometric
     - pytorch_scatter
     - pyyaml
     - tensorboard
     - wandb
-    - numba
+    - numba >=0.61.2
     - e3nn >=0.5
     - requests
     - orjson
