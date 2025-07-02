@@ -14,7 +14,7 @@ build:
   entry_points:
     - fairchem = fairchem.core._cli:main
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: {{ PYTHON }} -m pip install ./packages/fairchem-core -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
