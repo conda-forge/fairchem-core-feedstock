@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
+  url: https://github.com/facebookresearch/fairchem/archive/fairchem_core-{{ version }}.tar.gz
   sha256: c3e995d8217999d4daacf35f49d98f361a8d113f8e747e5e15c697c4162fe749
 
 build:
