@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://github.com/facebookresearch/fairchem/archive/fairchem_core-{{ version }}.tar.gz
-  sha256: 1303ab8b6fea265060788f55e80fa5f22118c5e6826b2a45122c0b7dc8197506
+  sha256: 26f95694fea6899b9961b7ca47a4daeee9298525e25e0d2e71ca110f50075a24
 
 build:
   entry_points:
