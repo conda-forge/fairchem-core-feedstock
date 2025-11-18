@@ -18,13 +18,13 @@ build:
 
 requirements:
   host:
-    - python >=3.10,<3.14
+    - python {{ python_min }}
     - hatchling
     - hatch-vcs
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
-    - python >=3.10,<3.14
+    - python >={{ python_min }},<3.14
     - pytorch >=2.8.0,<2.9.dev0
     - numpy >=2.0,<2.3
     - lmdb ==1.6.2
@@ -34,7 +34,7 @@ requirements:
     - ase >=3.26.0
     - ase-db-backends >=0.10.0
     - monty >=v2025.1.3
-    - clusterscope ==0.0.18
+    - clusterscope =0.0.18
     - requests
     - orjson
     - tqdm
