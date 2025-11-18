@@ -1,0 +1,21 @@
+From f0f3b8c8e1e40f10c76af278606500eae2991061 Mon Sep 17 00:00:00 2001
+From: Jan Janssen <janssen@mpie.de>
+Date: Tue, 18 Nov 2025 15:57:44 -0800
+Subject: [PATCH] empty readme
+
+---
+ src/fairchem/core/README.md | 1 -
+ 1 file changed, 1 deletion(-)
+ mode change 120000 => 100644 src/fairchem/core/README.md
+
+diff --git a/src/fairchem/core/README.md b/src/fairchem/core/README.md
+deleted file mode 120000
+index 8a33348..0000000
+--- /src/fairchem/core/README.md
++++ /dev/null
+@@ -1 +0,0 @@
+-../../../README.md
+\ No newline at end of file
+diff --git a/src/fairchem/core/README.md b/src/fairchem/core/README.md
+new file mode 100644
+index 0000000..e69de29
