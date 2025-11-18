@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
   sha256: 7405a43a8dc743d9d5e642be9cee8b9583795bd62298498c59a768ff442f3883
+  patches:
+    - readme.patch
 
 build:
   entry_points:
