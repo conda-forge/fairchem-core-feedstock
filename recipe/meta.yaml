@@ -27,7 +27,7 @@ requirements:
     - python >={{ python_min }},<3.14
     - pytorch >=2.8.0,<2.9.dev0
     - numpy >=2.0,<2.3
-    - lmdb ==1.6.2
+    - python-lmdb =1.6.2
     - numba >=0.61.2
     - e3nn >=0.5
     - huggingface_hub >=0.27.1
