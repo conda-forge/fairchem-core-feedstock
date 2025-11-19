@@ -11,7 +11,7 @@ Subject: [PATCH] empty readme
 diff --git a/src/fairchem/core/README.md b/src/fairchem/core/README.md
 deleted file mode 120000
 index 8a33348..0000000
---- /src/fairchem/core/README.md
+--- src/fairchem/core/README.md
 +++ /dev/null
 @@ -1 +0,0 @@
 -../../../README.md
