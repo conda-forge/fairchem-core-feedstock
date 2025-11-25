@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "2.11.0" %}
+{% set version = "2.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: 7405a43a8dc743d9d5e642be9cee8b9583795bd62298498c59a768ff442f3883
+  sha256: eb955eb818a58899cc1fdb1c8ee972ee4f3f775ec93d382ed15e0fb8c458f463
   patches:
     - readme.patch
 
@@ -26,6 +26,7 @@ requirements:
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
+    - huggingface_hub >=0.27.1
     - python >={{ python_min }},<3.14
     - pytorch >=2.8.0,<2.9.dev0
     - numpy >=2.0,<2.3
