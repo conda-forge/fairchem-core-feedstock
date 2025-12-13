@@ -1,5 +1,6 @@
 {% set name = "fairchem-core" %}
 {% set version = "2.13.0" %}
+{% set python_min = "3.11" %}
 
 package:
   name: {{ name|lower }}
