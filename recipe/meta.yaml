@@ -26,7 +26,7 @@ requirements:
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
-    - ray >=2.50.0
+    - ray-core >=2.50.0
     - huggingface_hub >=0.27.1
     - python >={{ python_min }},<3.14
     - pytorch >=2.8.0,<2.9.dev0
