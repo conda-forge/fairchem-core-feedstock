@@ -1,5 +1,5 @@
 {% set name = "fairchem-core" %}
-{% set version = "2.12.0" %}
+{% set version = "2.15.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
-  sha256: eb955eb818a58899cc1fdb1c8ee972ee4f3f775ec93d382ed15e0fb8c458f463
+  sha256: de553c1fff0756593dc04ffc60cf4f0673f0bc9fb9d4163eaa8807103362857c
   patches:
     - readme.patch
 
@@ -26,18 +26,21 @@ requirements:
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
+    - ray >=2.53.0
+    - scipy >=1.15.0
+    - setuptools <81.0.0
     - huggingface_hub >=0.27.1
     - python >={{ python_min }},<3.14
     - pytorch >=2.8.0,<2.9.dev0
-    - numpy >=2.0,<2.3
-    - python-lmdb =1.6.2
-    - numba >=0.61.2
+    - numpy >=2.0,<2.4
+    - python-lmdb >=1.6.2,<=1.7.3
+    - numba >=0.62.0
     - e3nn >=0.5
     - huggingface_hub >=0.27.1
     - ase >=3.26.0
     - ase-db-backends >=0.10.0
     - monty >=v2025.1.3
-    - clusterscope =0.0.18
+    - clusterscope ==0.0.18
     - requests
     - orjson
     - tqdm
