@@ -1,33 +1,37 @@
-{% set name = "fairchem-core" %}
-{% set version = "2.12.0" %}
+schema_version: 1
+
+context:
+  name: fairchem-core
+  version: 2.12.0
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/fairchem_core-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fairchem_core-${{ version }}.tar.gz
   sha256: eb955eb818a58899cc1fdb1c8ee972ee4f3f775ec93d382ed15e0fb8c458f463
   patches:
     - readme.patch
 
 build:
-  entry_points:
-    - fairchem = fairchem.core._cli:main
+  number: 1
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - fairchem = fairchem.core._cli:main
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - hatchling
     - hatch-vcs
     - hatch-fancy-pypi-readme >=24
     - pip
   run:
     - huggingface_hub >=0.27.1
-    - python >={{ python_min }},<3.14
+    - python >=${{ python_min }},<3.14
     - pytorch >=2.8.0,<2.9.dev0
     - numpy >=2.0,<2.3
     - python-lmdb =1.6.2
@@ -48,19 +52,22 @@ requirements:
     - wandb
     - websockets
 
-test:
-  requires:
-    - python {{ python_min }}
-  imports:
-    - fairchem.core
-  commands:
-    - fairchem --help
+tests:
+  - python:
+      imports:
+        - fairchem.core
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - fairchem --help
 
 about:
-  home: https://github.com/FAIR-Chem/fairchem
   summary: Machine learning models for use in catalysis as part of the Open Catalyst Project
   license: MIT
   license_file: src/fairchem/core/LICENSE.md
+  homepage: https://github.com/FAIR-Chem/fairchem
 
 extra:
   recipe-maintainers:
