@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: fairchem-core
-  version: 2.23.0
+  version: 2.24.0
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/fairchem_core-${{ version }}.tar.gz
-  sha256: 5b7a95b7f90b952f96a45ff32e709b5221ef2651b8c2d796fef59954752b8650
+  sha256: 7a43615eb2596975bb74f5e4d9ecb0cf5bdc4f0e49de241172ea812a84c54703
   patches:
     - readme.patch
 
@@ -55,6 +55,8 @@ requirements:
     - websockets
     - nvalchemi-toolkit-ops >=0.4.1
     - backoff
+    - cuda-python >=12.8
+    - nvidia-cutlass-dsl ==4.7.1
 tests:
   - python:
       imports:
